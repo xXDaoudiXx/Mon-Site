@@ -24,14 +24,12 @@
                     url('Mon Image.png') center center / cover no-repeat;
     }
 
-    /* --- ZONE DES PARTICULES --- */
     #particles-js {
-        position: absolute;
         width: 100%;
         height: 100%;
+        opacity: 0.8;
     }
 
-    /* --- TITRE BLEU NÉON --- */
     .neon-blue-text {
       color: #fff;
       text-shadow:
@@ -41,7 +39,7 @@
       font-style: italic;
     }
 
-    /* --- CARRÉS (RGB CARD) --- */
+    /* --- RECTANGLES TAILLE RÉDUITE --- */
     .rgb-card {
         position: relative;
         border-radius: 20px;
@@ -49,8 +47,8 @@
         overflow: hidden;
         display: flex;
         width: 100%;
-        max-width: 300px; /* Taille réduite */
-        margin: 0 auto;
+        max-width: 280px; /* Taille réduite ici */
+        margin: 0 auto;   /* Centre les carrés sur mobile */
     }
 
     .rgb-card::before {
@@ -66,7 +64,7 @@
         background: #0f0f0f; 
         border-radius: 18px;
         width: 100%;
-        padding: 25px 20px;
+        padding: 25px 15px; /* Padding réduit */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -74,20 +72,19 @@
 
     @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-    /* --- BOUTONS --- */
     .btn-enter {
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 12px 15px;
-        width: 85%;
+        padding: 10px 15px; /* Bouton plus fin */
+        width: 90%;
         border-radius: 10px;
-        margin-top: 20px;
+        margin-top: 15px;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 2px;
         transition: 0.3s;
         text-align: center;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .btn-enter:hover {
@@ -104,15 +101,14 @@
   </div>
 
   <main class="flex flex-col flex-grow items-center justify-center p-6 relative z-10">
-    <h1 class="text-4xl md:text-6xl font-black mb-2 neon-blue-text">xXDaoudiXx</h1>
-    <p class="text-gray-400 mb-10 tracking-[0.4em] uppercase text-[9px] font-bold">Logiciels Et Apk Gratuit</p>
+    <h1 class="text-5xl md:text-6xl font-black mb-2 neon-blue-text">xXDaoudiXx</h1>
+    <p class="text-gray-400 mb-8 tracking-[0.4em] uppercase text-[10px] font-bold">Logiciels Et Apk Gratuit</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl">
-      
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl">
       <div class="rgb-card">
         <div class="card-inner">
             <h2 class="text-2xl font-black mb-4 italic">ANDROID</h2>
-            <img src="images/LD0006205706.png" alt="Android" class="w-[80px] h-[80px] object-contain mb-2">
+            <img src="images/LD0006205706.png" alt="Android" class="w-[80px] h-[80px] object-contain mb-3">
             <a href="android.html" class="btn-enter">ENTRER</a>
         </div>
       </div>
@@ -120,11 +116,10 @@
       <div class="rgb-card">
         <div class="card-inner">
             <h2 class="text-2xl font-black mb-4 italic">WINDOWS</h2>
-            <img src="images/Pc.png" alt="PC" class="w-[80px] h-[80px] object-contain mb-2">
+            <img src="images/Pc.png" alt="PC" class="w-[80px] h-[80px] object-contain mb-3">
             <a href="logiciels.html" class="btn-enter">ENTRER</a>
         </div>
       </div>
-
     </div>
   </main>
 
@@ -132,49 +127,19 @@
   <script>
     particlesJS('particles-js', {
       "particles": {
-        "number": {
-          "value": 80, 
-          "density": {"enable": true, "value_area": 800}
-        },
-        "color": {
-          "value": "#00d2ff" /* COULEUR BLEU CIEL */
-        },
-        "shape": {
-          "type": "circle"
-        },
-        "opacity": {
-          "value": 0.7,
-          "random": false
-        },
-        "size": {
-          "value": 3,
-          "random": true
-        },
+        "number": {"value": 60, "density": {"enable": true, "value_area": 800}},
+        "color": {"value": "#00d2ff"},
+        "shape": {"type": "circle"},
+        "opacity": {"value": 0.8},
+        "size": {"value": 3},
         "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#00d2ff", /* LIGNES BLEU CIEL */
-          "opacity": 0.4,
-          "width": 1
+            "enable": true, 
+            "distance": 150, 
+            "color": "#00d2ff", 
+            "opacity": 0.3
         },
-        "move": {
-          "enable": true,
-          "speed": 2,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": { "enable": true, "mode": "grab" },
-          "onclick": { "enable": true, "mode": "push" }
-        }
-      },
-      "retina_detect": true
+        "move": {"enable": true, "speed": 2}
+      }
     });
   </script>
 </body>
