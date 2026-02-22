@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>xXDaoudiXx - Edition Compacte</title>
+  <title>xXDaoudiXx - Blue Particles Edition</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -14,7 +14,7 @@
         overflow-x: hidden;
     }
 
-    /* --- FOND --- */
+    /* --- CONTENEUR DU FOND --- */
     #bg-wrapper {
         position: fixed;
         top: 0; left: 0;
@@ -24,32 +24,32 @@
                     url('Mon Image.png') center center / cover no-repeat;
     }
 
+    /* --- ZONE DES PARTICULES --- */
     #particles-js {
+        position: absolute;
         width: 100%;
         height: 100%;
-        opacity: 0.8;
     }
 
-    /* --- NOUVELLE COULEUR DAOUDI (JAUNE NÉON) --- */
-    .neon-text-custom {
+    /* --- TITRE BLEU NÉON --- */
+    .neon-blue-text {
       color: #fff;
       text-shadow:
         0 0 5px #fff,
-        0 0 15px #ffea00, 
-        0 0 30px rgba(255, 234, 0, 0.6);
+        0 0 15px #00d2ff,
+        0 0 30px rgba(0, 210, 255, 0.6);
       font-style: italic;
     }
 
-    /* --- CARRÉS IDENTIQUES --- */
+    /* --- CARRÉS (RGB CARD) --- */
     .rgb-card {
         position: relative;
-        border-radius: 15px;
+        border-radius: 20px;
         padding: 2px;
         overflow: hidden;
         display: flex;
-        /* Taille fixe pour l'uniformité */
-        width: 280px; 
-        height: 320px;
+        width: 100%;
+        max-width: 300px; /* Taille réduite */
         margin: 0 auto;
     }
 
@@ -64,15 +64,12 @@
 
     .card-inner {
         background: #0f0f0f; 
-        border-radius: 13px;
+        border-radius: 18px;
         width: 100%;
-        height: 100%;
-        padding: 25px 15px;
+        padding: 25px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Aligne le titre en haut, l'image au centre, le bouton en bas */
-        justify-content: space-between; 
     }
 
     @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -81,21 +78,22 @@
     .btn-enter {
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 10px 15px;
-        width: 90%;
+        padding: 12px 15px;
+        width: 85%;
         border-radius: 10px;
+        margin-top: 20px;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-size: 0.8rem;
         transition: 0.3s;
         text-align: center;
+        font-size: 0.9rem;
     }
 
     .btn-enter:hover {
         background: white;
         color: black;
-        box-shadow: 0 0 15px rgba(255,255,255,0.4);
+        box-shadow: 0 0 20px rgba(255,255,255,0.4);
     }
   </style>
 </head>
@@ -106,23 +104,23 @@
   </div>
 
   <main class="flex flex-col flex-grow items-center justify-center p-6 relative z-10">
-    <h1 class="text-5xl md:text-7xl font-black mb-4 neon-text-custom">xXDaoudiXx</h1>
-    <p class="text-gray-400 mb-8 tracking-[0.4em] uppercase text-[10px] font-bold">Logiciels Et Apk Gratuit</p>
+    <h1 class="text-4xl md:text-6xl font-black mb-2 neon-blue-text">xXDaoudiXx</h1>
+    <p class="text-gray-400 mb-10 tracking-[0.4em] uppercase text-[9px] font-bold">Logiciels Et Apk Gratuit</p>
 
-    <div class="flex flex-wrap justify-center gap-8 w-full max-w-4xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl">
       
       <div class="rgb-card">
         <div class="card-inner">
-            <h2 class="text-2xl font-black italic">SMARTPHONE</h2>
-            <img src="s25Ultra.png" alt="Android" class="w-[90px] h-[90px] object-contain">
+            <h2 class="text-2xl font-black mb-4 italic">ANDROID</h2>
+            <img src="images/LD0006205706.png" alt="Android" class="w-[80px] h-[80px] object-contain mb-2">
             <a href="android.html" class="btn-enter">ENTRER</a>
         </div>
       </div>
 
       <div class="rgb-card">
         <div class="card-inner">
-            <h2 class="text-2xl font-black italic">WINDOWS</h2>
-            <img src="Pc.png" alt="PC" class="w-[90px] h-[90px] object-contain">
+            <h2 class="text-2xl font-black mb-4 italic">WINDOWS</h2>
+            <img src="images/Pc.png" alt="PC" class="w-[80px] h-[80px] object-contain mb-2">
             <a href="logiciels.html" class="btn-enter">ENTRER</a>
         </div>
       </div>
@@ -134,19 +132,49 @@
   <script>
     particlesJS('particles-js', {
       "particles": {
-        "number": {"value": 50, "density": {"enable": true, "value_area": 800}},
-        "color": {"value": "#ffea00"}, /* Changé en jaune pour matcher ton thème */
-        "shape": {"type": "circle"},
-        "opacity": {"value": 0.6},
-        "size": {"value": 3},
-        "line_linked": {
-            "enable": true, 
-            "distance": 150, 
-            "color": "#ffea00", 
-            "opacity": 0.3
+        "number": {
+          "value": 80, 
+          "density": {"enable": true, "value_area": 800}
         },
-        "move": {"enable": true, "speed": 1.5}
-      }
+        "color": {
+          "value": "#00d2ff" /* COULEUR BLEU CIEL */
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.7,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00d2ff", /* LIGNES BLEU CIEL */
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
     });
   </script>
 </body>
