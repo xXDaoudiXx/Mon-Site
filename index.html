@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Logithèque Néon - Accueil</title>
+    <style>
+        body { margin: 0; padding: 0; overflow: hidden; background-color: #000; }
+        
+        /* On place le canvas par-dessus tout pour être sûr qu'il soit visible */
+        #rain-canvas { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 10; 
+            pointer-events: none; 
+        }
+
+        .accueil-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.6);
+            background-blend-mode: darken;
+            position: relative;
+            z-index: 1;
+        }
+
+        .custom-title { color: white; font-size: 5em; margin-bottom: 10px; }
+
+        .btn-entrer {
+            padding: 20px 50px;
+            border: 2px solid #00e5ff;
+            color: #00e5ff;
+            text-decoration: none;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px #00e5ff;
+            transition: 0.3s;
+            position: relative;
+            z-index: 20; /* S'assure que le bouton reste cliquable */
+        }
+
+        .btn-entrer:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            box-shadow: 0 0 30px #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="rain-canvas"></canvas>
+
+<div class="accueil-page">
+    <h1 class="custom-title">xXDaoudiXx</h1>
+    <p style="color:#00e5ff; font-size: 1.2em;">Partage d'applications et logiciels.</p>
+    <br><br>
+    <a href="Logiciel.html" class="btn-entrer">ENTRER DANS LE SYSTÈME</a>
+</div>
+
+<script>
+    const canvas = document.getElementById('rain-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const drops = [];
+    for(let i = 0; i < 150; i++) {
+        drops.push({ 
+            x: Math.random() * canvas.width, 
+            y: Math.random() * canvas.height, 
+            vy: Math.random() * 3 + 2,
+            size: Math.random() * 2 + 1
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)'; // Blanc plus visible
+        drops.forEach(d => {
+            ctx.beginPath();
+            ctx.arc(d.x, d.y, d.size, 0, Math.PI * 2);
+            ctx.fill();
+            d.y += d.vy;
+            if(d.y > canvas.height) d.y = -10;
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Logithèque Néon - Bleu Ciel</title>
+    <!-- Chargement de particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        /* --- STYLE DES PARTICULES --- */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        /* --- STYLE GLOBAL --- */
+        body {
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: #050505;
+            
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- EN-TÊTE --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a3a4a;
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        .nav-links { display: flex; gap: 25px; }
+
+        .nav-links a {
+            color: #00ff00;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #ffffff, 0 0 15px #00ff00;
+        }
+
+        .search-bar {
+            background-color: #0a0a0a;
+            border: 1px solid #00ff00;
+            border-radius: 20px;
+            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+            width: 250px;
+        }
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            outline: none;
+            width: 100%;
+            padding-left: 10px;
+        }
+
+        /* --- TITRE --- */
+        h1.main-title {
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            text-transform: uppercase;
+            font-size: 3em;
+            margin: 40px 0;
+        }
+		
+		/* --- DESCRIPTION --- */
+        .main-description {
+            text-align: center;
+            color: #ffffff; /* Correction de la couleur pour plus de visibilité */
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 0 5px rgba(0, 229, 255, 0.2);
+        }
+
+        /* --- GRILLE --- */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px 20px;
+        }
+
+        /* --- CARTE --- */
+        .software-card {
+            background-color: #000000;
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .software-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 2px solid #00ff00;
+            box-shadow: inset 0 0 10px #00ff00;
+            object-fit: cover;
+        }
+
+        .card-title { color: #ffffff; margin: 10px 0 5px 0; text-transform: none; }
+        .card-meta { color: #84ffff; font-size: 0.85em; margin-bottom: 15px; }
+        .card-desc { color: #b0bec5; font-size: 0.9em; margin-bottom: 20px; flex-grow: 1; }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            background-color: #00ff00;
+            color: #000000;
+            padding: 12px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px #00ff00;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover { background-color: #ffffff; }
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<div class="main-container">
+    <header>
+        <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="logiciel.html">Logiciels PC</a>
+    <a href="android.html">Applications Android</a>
+    <a href="outils.html">Outils Bootables</a>
+    <a href="isowindows.html">ISO Bootables</a>
+</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher...">
+        </div>
+    </header>
+
+    <h1 class="main-title">Applications Android</h1>
+	<p class="main-description">Bienvenue sur La Page De Téléchargement Android Les Version "Pro" Sont Des APK Premium.</p>
+
+    <div class="software-grid">
+        <!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/adguard.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Adguard Pro</h3>
+            <div class="card-meta">v4.14.34 | 60.8 Mo</div>
+            <p class="card-desc">Bloque toutes sortes de publicités Élimine des élements web agaçants Économise le trafic et accélère le chargement des pages Fonctionne dans les navigateurs et les applications Conserve la fonctionnalité et l'ésthétique des sites web</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        <!-- Carte 2 -->
+        <div class="software-card">
+            <img src="images/alfred.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">AlfredCamera Pro</h3>
+            <div class="card-meta">v2025.24.1 | 81.4 Mo</div>
+            <p class="card-desc">L'application de caméra de sécurité domestique la plus populaire Transformez vos téléphones inutilisés en caméras de sécurité performantes</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        <!-- Carte 3 -->
+        <div class="software-card">
+            <img src="images/apk.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Apk Extractor</h3>
+            <div class="card-meta">v4.2.1 | 1.93 Mo</div>
+            <p class="card-desc">Extraire un fichier APK de votre appareil</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        <!-- Carte 4 -->
+        <div class="software-card">
+            <img src="images/autocliker.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Auto Clicker Pro</h3>
+            <div class="card-meta">v.1.0 | 3.21 Mo</div>
+            <p class="card-desc">AutoClick Pro est une excellente application qui vous aide à automatiser des actions comme cliquer ou glisser SANS DROITS ROOT !</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        <!-- Carte 5 -->
+        <div class="software-card">
+            <img src="images/blokada 5.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Blokada 5 Pro</h3>
+            <div class="card-meta">v23.2.1 | 20.5 Mo</div>
+            <p class="card-desc">Blokada est la suite populaire d'applications de confidentialité pour Android et iOS, y compris le contrôle parental, un bloqueur de publicités et un VPN. Il est soutenu et activement développé par la communauté open source incroyable.</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        <!-- Carte 6 -->
+        <div class="software-card">
+            <img src="images/down.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Downloader</h3>
+            <div class="card-meta">v2.0.3 | 11.3 Mp</div>
+            <p class="card-desc">Downloader pour récupérer différents types de fichiers numériques sur Internet</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 6 -->
+        <div class="software-card">
+            <img src="images/F-Droid_Logo_4.svg.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">F-Droid</h3>
+            <div class="card-meta">v.1.0 | 11.8 Mo</div>
+            <p class="card-desc">Votre plateforme de confiance pour les applications mobiles libres et open source</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/find.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Find My Kids Pro</h3>
+            <div class="card-meta">v.1.0 | 92.6 Mo</div>
+            <p class="card-desc">Application de suivi GPS</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/Fing.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Fing Pro </h3>
+            <div class="card-meta">v12.11.8 | 60.9 Mo</div>
+            <p class="card-desc">Fing offre aux particuliers comme aux professionnels de l'informatique les outils nécessaires pour renforcer leur cybersécurité, surveiller leurs réseaux et gérer chaque appareil, le tout en quelques clics.</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/happymods.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Happy Mods</h3>
+            <div class="card-meta">v.1.0 | 17.2 Mo</div>
+            <p class="card-desc">Plateforme de modding gratuite</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/Playmods.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Play Mods</h3>
+            <div class="card-meta">v2.6.18 | 34.9 Mo</div>
+            <p class="card-desc">PlayMods est une boutique d'applications Android qui propose une vaste collection de jeux et d'applications modifiés</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/immat.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Immat Scanner</h3>
+            <div class="card-meta">v2.3.0 | 31.6 Mo</div>
+            <p class="card-desc">Ce service vous permet d'identifier les véhicules autour de vous en vous donnant leurs caractéristiques. Vous aurez ainsi accès à la marque, au modèle, à l'année du véhicule et également à de nombreuses caractéristiques techniques.</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/jellyfin.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">JellyFin</h3>
+            <div class="card-meta">v2.6.3 | 11.5 Mo</div>
+            <p class="card-desc">Jellyfin est une solution multimédia collaborative qui vous donne le contrôle total de vos contenus. Diffusez en streaming sur n'importe quel appareil depuis votre propre serveur, sans aucune obligation. Vos contenus, votre serveur, votre façon de faire.</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/localsend.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Local Send</h3>
+            <div class="card-meta">v1.17.0 | 4.50 Mo</div>
+            <p class="card-desc">Partagez des fichiers sans cloud. Rapide, privé, hors ligne.</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/lokke.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Lokke</h3>
+            <div class="card-meta">v1.0.33 | 117 Mo</div>
+            <p class="card-desc">Iptv Gratuit</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/projectivy.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Projectivy Launcher Pro</h3>
+            <div class="card-meta">v4.68 | 10.4 Mo</div>
+            <p class="card-desc">Dites adieu aux écrans encombrés et aux publicités intrusives. Découvrez Projectivy Launcher, le lanceur personnalisable par excellence qui transforme votre écran d'accueil en un centre de divertissement élégant et sans publicité.</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/sd maid.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Sd Maid Pro</h3>
+            <div class="card-meta">v5.1.10 | 8.06 Mo</div>
+            <p class="card-desc">SD Maid vous aidera à garder votre appareil bien rangé et sans rien de superflu ! Il vous offre une collection d’outils pour gérer vos applis et fichiers</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/tail.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Tailscale</h3>
+            <div class="card-meta">v1.96.4 | 93.9 Mo</div>
+            <p class="card-desc">Une plateforme de connectivité basée sur l'identité et le modèle Zero Trust qui remplace vos anciens VPN, SASE et PAM et connecte les équipes distantes, les environnements multicloud, les pipelines CI/CD, les appareils Edge et IoT et les charges de travail d'IA.</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/VIIDURE.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Viidure Pro</h3>
+            <div class="card-meta">v2.11.1 | 195 Mo</div>
+            <p class="card-desc">Viidure est un logiciel client pour les enregistreurs de conduite, les caméras sportives et d'autres appareils qui prennent en charge plusieurs solutions matérielles</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/wifi ar.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Wi-Fi Ar</h3>
+            <div class="card-meta">v5.17 | 9.85 Mo</div>
+            <p class="card-desc">WiFi AR est une application gratuite pour Android qui utilise la technologie de réalité augmentée pour analyser et améliorer votre connexion Internet</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/xplore.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">X-Plore File Manager</h3>
+            <div class="card-meta">v.1.0 | 12.9 Mo</div>
+            <p class="card-desc">X-plore File Manager est un explorateur de fichiers avancé</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/𝐒𝐩𝐢𝐫𝐢𝐭 𝐓𝐚𝐥𝐤𝐞𝐫.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Spirit Tailker Pro</h3>
+            <div class="card-meta">v.1.0 | 11.2 Mo</div>
+            <p class="card-desc">The Original Paranormal Communication</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		<!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/brave.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Brave</h3>
+            <div class="card-meta">v1.88.133 | 50 MB</div>
+            <p class="card-desc">Bloquez les publicités, économisez des données et naviguez beaucoup plus rapidement sur le Web. Le tout en changeant simplement de navigateur</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+		
+    </div>
+</div>
+
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 80 },
+            "color": { "value": "#00ff00" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5 },
+            "size": { "value": 3 },
+            "line_linked": { "enable": true, "color": "#00ff00" },
+            "move": { "enable": true, "speed": 2 }
+        }
+    });
+
+    const searchInput = document.querySelector('.search-bar input');
+    const cards = document.querySelectorAll('.software-card');
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        cards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            card.style.display = title.includes(searchTerm) ? 'flex' : 'none';
+        });
+    });
+</script>
+
+</body>
+</html>

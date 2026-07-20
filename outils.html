@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Logithèque Néon - Bleu Ciel</title>
+    <!-- Chargement de particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        /* --- STYLE DES PARTICULES --- */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        /* --- STYLE GLOBAL --- */
+        body {
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: #050505;
+            
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- EN-TÊTE --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a3a4a;
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        .nav-links { display: flex; gap: 25px; }
+
+        .nav-links a {
+            color: #d50000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #ffffff, 0 0 15px #d50000;
+        }
+
+        .search-bar {
+            background-color: #0a0a0a;
+            border: 1px solid #d50000;
+            border-radius: 20px;
+            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+            width: 250px;
+        }
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            outline: none;
+            width: 100%;
+            padding-left: 10px;
+        }
+
+        /* --- TITRE --- */
+        h1.main-title {
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #d50000, 0 0 30px #d50000;
+            text-transform: uppercase;
+            font-size: 3em;
+            margin: 40px 0;
+        }
+		
+		/* --- DESCRIPTION --- */
+        .main-description {
+            text-align: center;
+            color: #ffffff; /* Correction de la couleur pour plus de visibilité */
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 0 5px rgba(0, 229, 255, 0.2);
+        }
+
+        /* --- GRILLE --- */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px 20px;
+        }
+
+        /* --- CARTE --- */
+        .software-card {
+            background-color: #000000;
+            border: 1px solid #d50000;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .software-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 2px solid #d50000;
+            box-shadow: inset 0 0 10px #d50000;
+            object-fit: cover;
+        }
+
+        .card-title { color: #ffffff; margin: 10px 0 5px 0; text-transform: none; }
+        .card-meta { color: #84ffff; font-size: 0.85em; margin-bottom: 15px; }
+        .card-desc { color: #b0bec5; font-size: 0.9em; margin-bottom: 20px; flex-grow: 1; }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            background-color: #d50000;
+            color: #000000;
+            padding: 12px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px #d50000;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover { background-color: #ffffff; }
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<div class="main-container">
+    <header>
+        <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="logiciel.html">Logiciels PC</a>
+    <a href="android.html">Applications Android</a>
+    <a href="outils.html">Outils Bootables</a>
+    <a href="isowindows.html">ISO Bootables</a>
+</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher...">
+        </div>
+    </header>
+
+    <h1 class="main-title">Outils Bootables</h1>
+	<p class="main-description">Bienvenue sur La Page De Téléchargement Outils Bootables. Les ISO sont prêts à l'emploi, il y a juste à les mettre sur USB.</p>
+
+    <div class="software-grid">
+        <!-- Carte 1 -->
+        <div class="software-card">
+            <img src="images/medicat.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Medicat</h3>
+            <div class="card-meta">v21.12 | 22.73 Go</div>
+            <p class="card-desc">Medicat est une boîte à outils qui permet de rassembler une sélection des outils de diagnostic et de récupération informatique les plus récents dans une boîte à outils facile à utiliser</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        <!-- Carte 2 -->
+        <div class="software-card">
+            <img src="images/ventoy.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Ventoy</h3>
+            <div class="card-meta">v1.1.05 | 18.8 Mo</div>
+            <p class="card-desc">Ventoy est un outil open source permettant de créer des clés USB bootables pour les fichiers ISO/WIM/IMG/VHD(x)/EFI.</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        <!-- Carte 3 -->
+        <div class="software-card">
+            <img src="images/lock.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Jayro's Lockpick</h3>
+            <div class="card-meta">v12.12 | 366 Mo</div>
+            <p class="card-desc">Contourner le mot de passe Windows Récupération de mot de passe Windows LazeSoft NTPWEdit PCUnlocker Déverrouillage de connexion Windows Réinitialisation du mot de passe Windows</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        <!-- Carte 4 -->
+        <div class="software-card">
+            <img src="images/serg.png" alt="Icône" class="card-icon">
+            <h3 class="card-title">Sergei Strelec</h3>
+            <div class="card-meta">v.1.0 | 3.15 Go</div>
+            <p class="card-desc">Pour la maintenance des ordinateurs, des disques durs et des partitions, la sauvegarde et la restauration des disques et des partitions, le diagnostic informatique, la récupération de données, l'installation de Windows</p>
+            <a href="#" class="download-btn">Télécharger</a>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 80 },
+            "color": { "value": "#d50000" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5 },
+            "size": { "value": 3 },
+            "line_linked": { "enable": true, "color": "#d50000" },
+            "move": { "enable": true, "speed": 2 }
+        }
+    });
+
+    const searchInput = document.querySelector('.search-bar input');
+    const cards = document.querySelectorAll('.software-card');
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        cards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            card.style.display = title.includes(searchTerm) ? 'flex' : 'none';
+        });
+    });
+</script>
+
+</body>
+</html>
